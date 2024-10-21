@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Image Slider with Navbar</title>
+  <!-- <p>subscribe MenoCoder please please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000000;
+    }
+    nav {
+      width: 80%;
+      background-color: #000;
+      color: skyblue;
+      padding: 10px;
+      margin: 10px;
+      display: flex;
+      font-weight: 600;
+      font-size: 23px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: skyblue; 
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      max-width: 650px;
+      height: 380px;
+      overflow: hidden;
+      border: 2px solid #ddd;
+    }
+
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%; 
+    }
+
+    .slide img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .prev {
+      left: 10px; 
+    }
+
+    .next {
+      right: 10px; 
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">My Slider</div>
+    <div class="menu">
+      <a href="#home">Home</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Slider -->
+  <div class="slider">
+    <div class="slides">
+      <div class="slide"><img src="https://files.oaiusercontent.com/file-10OcTXvxvxhrZTTtFpVAXgWH?se=2024-10-18T17%3A12%3A01Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3De91ba492-f32a-4bdc-9ea9-cbc6676dc89b.webp&sig=cSf4wzqO1uZ7oLTKmMQubkMaRpDjBM1aqvcpsMuH4Kg%3D" alt="Image 1"></div>
+      <div class="slide"><img src="https://files.oaiusercontent.com/file-xNtNqACjHR73MeccJrsWQJNS?se=2024-10-18T17%3A15%3A03Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D8213ec2b-5840-408c-96d6-d2925d735e3d.webp&sig=nO3sVzt18RyamHnqxZJzIdqctPD8YEP2FuuavovUlsw%3D" alt="Image 2"></div>
+      <div class="slide"><img src="https://files.oaiusercontent.com/file-IcDK86tlvWrIvKCfEMC47VjM?se=2024-10-18T17%3A16%3A16Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0880b24c-db24-4bf4-834c-b698bbe8aca5.webp&sig=2On2VcLHGgDB2Dgm2ejDgpTBewuZ3HEpdIy7/H/V3z8%3D" alt="Image 3"></div>
+    </div>
+    <button class="prev">❮</button>
+    <button class="next">❯</button>
+  </div>
+
+  <script>
+    let slider = document.querySelector('.slides');
+    let nextBtn = document.querySelector('.next');
+    let prevBtn = document.querySelector('.prev');
+
+    nextBtn.onclick = () => {
+      slider.append(slider.querySelector('.slide:first-child'))
+    }
+
+    prevBtn.onclick = () => {
+      slider.prepend(slider.querySelector('.slide:last-child'))
+    }
+  </script>
+</body>
+</html>
+
+
+<!-- <p>subscribe MenoCoder please please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
+  <!-- <p>subscribe MenoCoder please </p> -->
